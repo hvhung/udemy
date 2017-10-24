@@ -1,9 +1,10 @@
 package guru.springframework.didemo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import guru.springframework.didemo.services.GreetingServiceImpl;
+import guru.springframework.didemo.services.GreetingService;
 
 //using autowired = using DI with Spring framework
 @Controller
@@ -14,10 +15,12 @@ public class PropertyInjectedController {
     * properties is EVIL.
     */
    @Autowired
-   public GreetingServiceImpl greetingServiceImpl;
+   @Qualifier("greetingServiceImpl")
+   public GreetingService greetingService;
 
    public String sayHello() {
-      return greetingServiceImpl.sayGreeting();
+      System.out.print("==> GreetingService: PropertyInjectedController - ");
+      return greetingService.sayGreeting();
    }
 
 }
