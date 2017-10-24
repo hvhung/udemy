@@ -22,7 +22,7 @@ public class ConstructorInjectedController {
    }
 
    public String sayHello() {
-      System.out.print("==> GreetingService: ConstructorInjectedController - ");
+      System.out.print("==> GreetingService - ");
       return greetingService.sayGreeting();
    }
    

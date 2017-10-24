@@ -19,7 +19,7 @@ public class PropertyInjectedController {
    public GreetingService greetingService;
 
    public String sayHello() {
-      System.out.print("==> GreetingService: PropertyInjectedController - ");
+      System.out.print("==> GreetingService - ");
       return greetingService.sayGreeting();
    }
 
