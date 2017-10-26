@@ -11,7 +11,7 @@ import guru.springframework.didemo.controllers.MyController;
 import guru.springframework.didemo.controllers.PropertyInjectedController;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"guru.springframework.didemo.controllers", "guru.springframework.didemo.services" })
+//@ComponentScan(basePackages= {"guru.springframework.didemo.controllers", "guru.springframework.didemo.services" })
 public class DiDemoApplication {
 
 	public static void main(String[] args) {
