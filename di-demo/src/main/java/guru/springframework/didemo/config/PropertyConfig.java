@@ -13,11 +13,11 @@ import guru.springframework.didemo.examplebeans.FakeDataSource;
 import guru.springframework.didemo.examplebeans.FakeJmsBroker;
 
 @Configuration
-//@PropertySource("classpath:datasource.properties")
-@PropertySources({
-   @PropertySource("classpath:datasource.properties"),
-   @PropertySource("classpath:jms.properties")
-})
+//Remove @PropertySources to use Spring Boot properties
+//@PropertySources({
+//   @PropertySource("classpath:datasource.properties"),
+//   @PropertySource("classpath:jms.properties")
+//})
 public class PropertyConfig {
 
    @Autowired
@@ -44,7 +44,8 @@ public class PropertyConfig {
    @Bean
    public FakeDataSource fakeDataSource() {
       FakeDataSource fakeDataSource = new FakeDataSource();
-      fakeDataSource.setUser(env.getProperty("USERNAME"));
+      fakeDataSource.setUser(user);
+      //fakeDataSource.setUser(env.getProperty("USERNAME"));
       fakeDataSource.setPassword(password);
       fakeDataSource.setUrl(url);
       return fakeDataSource;
@@ -59,10 +60,12 @@ public class PropertyConfig {
       return jmsBroker;
    }
 
-   @Bean
-   public static PropertySourcesPlaceholderConfigurer properties() {
-      PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-      return propertySourcesPlaceholderConfigurer;
-   }
+
+   //Remove PropertySourcesPlaceholderConfigurer to use Spring Boot properties
+//   @Bean
+//   public static PropertySourcesPlaceholderConfigurer properties() {
+//      PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+//      return propertySourcesPlaceholderConfigurer;
+//   }
 
 }
