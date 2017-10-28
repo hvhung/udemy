@@ -1,4 +1,4 @@
-package guru.springframework.spring5recipeapp.model;
+package guru.springframework.spring5recipeapp.domain;
 
 import java.util.Set;
 
