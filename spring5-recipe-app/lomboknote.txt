@@ -1,0 +1,13 @@
+download lombok jar, then execute: java -jar lombok.jar
+
+add lombok.jar to your project (use Java Build Path)
+Exit and start IDE
+rebuild all projects
+
+
+------
+if start Eclipse with a custom -vm parameter, you'll need to add:
+-vmargs -javaagent:lombok.jar
+
+if start STS with a custom -vm parameter, you'll need to add:
+-vmargs -javaagent:lombok.jar
